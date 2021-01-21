@@ -6,9 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class CjsOauth2SsoAuthServerApplication {
+public class CjsOauth2SsoGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CjsOauth2SsoAuthServerApplication.class, args);
+        SpringApplication.run(CjsOauth2SsoGatewayApplication.class, args);
     }
 }

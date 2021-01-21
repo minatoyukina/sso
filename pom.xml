@@ -3,6 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <groupId>com.wotrd</groupId>
     <artifactId>wotrd-cloud</artifactId>
     <version>1.0.2-RELEASE</version>
@@ -19,8 +26,17 @@
         <module>cjs-oauth2-sso-auth-server</module>
         <module>cjs-oauth2-sso-ui</module>
         <module>cjs-oauth2-sso-ui2</module>
+        <module>cjs-oauth2-sso-gateway</module>
 
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>2.0.3.RELEASE</version>
+        </dependency>
+    </dependencies>
 
 
 
