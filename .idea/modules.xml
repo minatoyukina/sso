@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cjs-oauth2-code-client/cjs-oauth2-code-client.iml" filepath="$PROJECT_DIR$/cjs-oauth2-code-client/cjs-oauth2-code-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cjs-oauth2-code-server/cjs-oauth2-code-server.iml" filepath="$PROJECT_DIR$/cjs-oauth2-code-server/cjs-oauth2-code-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/cjs-oauth2-example-master.iml" filepath="$PROJECT_DIR$/.idea/cjs-oauth2-example-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cjs-oauth2-sso-auth-server/cjs-oauth2-sso-auth-server.iml" filepath="$PROJECT_DIR$/cjs-oauth2-sso-auth-server/cjs-oauth2-sso-auth-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cjs-oauth2-sso-ui/cjs-oauth2-sso-ui.iml" filepath="$PROJECT_DIR$/cjs-oauth2-sso-ui/cjs-oauth2-sso-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cjs-oauth2-sso-ui2/cjs-oauth2-sso-ui2.iml" filepath="$PROJECT_DIR$/cjs-oauth2-sso-ui2/cjs-oauth2-sso-ui2.iml" />
+    </modules>
+  </component>
+</project>
