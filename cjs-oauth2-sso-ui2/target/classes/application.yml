@@ -9,7 +9,7 @@ security:
   oauth2:
     client:
       client-id: CouponSystem
-      client-secret: 123456
+      client-secret: 12345
       access-token-uri: http://localhost:8080/oauth/token
       user-authorization-uri: http://localhost:8080/oauth/authorize
     resource:
@@ -18,6 +18,12 @@ logging:
   level:
     org.springframework.security: debug
 spring:
+  application:
+    name: micro-oauth2-api2
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
   thymeleaf:
     cache: false
 
