@@ -9,6 +9,7 @@
         <module name="cjs-oauth2-code-client" />
         <module name="cjs-oauth2-code-server" />
         <module name="cjs-oauth2-sso-auth-server" />
+        <module name="cjs-oauth2-sso-gateway" />
         <module name="cjs-oauth2-sso-ui" />
         <module name="cjs-oauth2-sso-ui2" />
       </profile>
@@ -16,8 +17,9 @@
     <bytecodeTargetLevel>
       <module name="cjs-oauth2-code-client" target="1.8" />
       <module name="cjs-oauth2-code-server" target="1.8" />
-      <module name="cjs-oauth2-example-master" target="1.5" />
+      <module name="cjs-oauth2-example-master" target="1.8" />
       <module name="cjs-oauth2-sso-auth-server" target="1.8" />
+      <module name="cjs-oauth2-sso-gateway" target="1.8" />
       <module name="cjs-oauth2-sso-ui" target="1.8" />
       <module name="cjs-oauth2-sso-ui2" target="1.8" />
     </bytecodeTargetLevel>
