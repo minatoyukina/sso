@@ -18,6 +18,12 @@ logging:
   level:
     org.springframework.security: debug
 spring:
+  application:
+    name: micro-oauth2-api2
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
   thymeleaf:
     cache: false
 

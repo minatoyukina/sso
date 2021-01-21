@@ -1,5 +1,6 @@
 package com.cjs.example.config;
 
+import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -7,6 +8,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import reactor.core.publisher.Mono;
+
+import java.net.InetSocketAddress;
 
 /**
  * Redis相关配置
@@ -28,6 +32,15 @@ public class RedisRepositoryConfig {
         redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
         redisTemplate.afterPropertiesSet();
         return redisTemplate;
+    }
+
+    @Bean
+    KeyResolver ipKeyResolver() {
+        return exchange -> {
+            InetSocketAddress remoteAddress = exchange.getRequest().getRemoteAddress();
+            assert remoteAddress != null;
+            return Mono.just(remoteAddress.getHostName());
+        };
     }
 
 }

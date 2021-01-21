@@ -15,6 +15,11 @@ spring:
             - Path=/api/**
           filters:
             - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 1
+                key-resolver: "#{@ipKeyResolver}"
         - id: oauth2-auth-route
           uri: lb://micro-oauth2-auth
           predicates:
