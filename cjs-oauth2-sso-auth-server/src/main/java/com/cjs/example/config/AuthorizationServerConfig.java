@@ -1,5 +1,6 @@
 package com.cjs.example.config;
 
+import com.cjs.example.support.MyUserDetailsService;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -21,6 +22,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Resource
     private AuthenticationManager authenticationManager;
+
+    @Resource
+    private MyUserDetailsService myUserDetailsService;
 
     /**
      * 配置授权服务器的安全，意味着实际上是/oauth/token端点。
@@ -50,9 +54,11 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
      * 默认情况下，你不需要做任何事情，除非你需要密码授权，那么在这种情况下你需要提供一个AuthenticationManager
      */
     @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.tokenStore(new JdbcTokenStore(dataSource)).authenticationManager(authenticationManager);
-        super.configure(endpoints);
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
+        endpoints
+                .userDetailsService(myUserDetailsService)
+                .tokenStore(new JdbcTokenStore(dataSource))
+                .authenticationManager(authenticationManager);
     }
 
 }
