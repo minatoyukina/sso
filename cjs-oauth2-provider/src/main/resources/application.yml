@@ -1,0 +1,12 @@
+server:
+  port: 8090
+logging:
+  level:
+    org.springframework.security: debug
+spring:
+  application:
+    name: micro-oauth2-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
