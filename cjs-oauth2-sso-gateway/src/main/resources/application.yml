@@ -5,6 +5,9 @@ spring:
     name: micro-oauth2-gateway
   cloud:
     nacos:
+      config:
+        enabled: true
+        file-extension: yaml
       discovery:
         server-addr: localhost:8848
     gateway:
@@ -24,6 +27,12 @@ spring:
           uri: lb://micro-oauth2-auth
           predicates:
             - Path=/auth/**
+          filters:
+            - StripPrefix=1
+        - id: oauth2-auth-provider
+          uri: lb://micro-oauth2-provider
+          predicates:
+            - Path=/provider/**
           filters:
             - StripPrefix=1
       discovery:

@@ -2,7 +2,7 @@ server:
   port: 8090
 logging:
   level:
-    org.springframework.security: debug
+    org.springframework.web: debug
 spring:
   application:
     name: micro-oauth2-provider

@@ -2,7 +2,10 @@ server:
   port: 8091
 logging:
   level:
-    org.springframework.security: debug
+    org.springframework.cloud.openfeign: debug
+feign:
+  hystrix:
+    enabled: true
 spring:
   application:
     name: micro-oauth2-consumer
