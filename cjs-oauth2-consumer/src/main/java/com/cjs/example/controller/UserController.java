@@ -11,7 +11,7 @@ import javax.annotation.Resource;
  * @author ccq
  * @since 2021/1/22 17:15
  */
-@RestController
+@RestController("user")
 public class UserController {
 
     @Resource

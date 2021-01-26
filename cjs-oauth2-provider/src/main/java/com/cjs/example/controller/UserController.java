@@ -16,7 +16,7 @@ public class UserController {
     @GetMapping
     public User getUser() {
         User user = new User();
-        user.setUsername("root");
+        user.setUsername("provider");
         user.setPassword("123456");
         user.setAge(17);
         return user;

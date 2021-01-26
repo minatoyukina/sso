@@ -1,5 +1,6 @@
 package com.cjs.example.config;
 
+import com.cjs.example.support.AuthTokenEnhancer;
 import com.cjs.example.support.MyUserDetailsService;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -58,6 +59,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         endpoints
                 .userDetailsService(myUserDetailsService)
                 .tokenStore(new JdbcTokenStore(dataSource))
+                .tokenEnhancer(new AuthTokenEnhancer())
                 .authenticationManager(authenticationManager);
     }
 
